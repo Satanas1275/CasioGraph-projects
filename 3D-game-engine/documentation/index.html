@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Documentation — Casio Graph Game Engine</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+/* === GLOBAL === */
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    display: flex;
+    background: #121212;
+    color: #e0e0e0;
+    line-height: 1.6;
+}
+
+a {
+    color: #4fc3f7;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* === SIDEBAR === */
+.sidebar {
+    width: 250px;
+    min-width: 250px;
+    background: #1e1e1e;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+.sidebar h2 {
+    color: #4fc3f7;
+    margin-bottom: 1em;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.sidebar li {
+    margin: 10px 0;
+}
+
+.sidebar li a {
+    display: block;
+    padding: 6px 10px;
+    border-radius: 5px;
+}
+
+.sidebar li a:hover {
+    background: #333;
+}
+
+/* === CONTENT === */
+.content {
+    margin-left: 250px;
+    padding: 30px;
+    max-width: 900px;
+    width: 100%;
+}
+
+h1 {
+    color: #4fc3f7;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h2 {
+    border-bottom: 2px solid #4fc3f7;
+    padding-bottom: 5px;
+    margin-top: 2em;
+    color: #fff;
+}
+
+pre {
+    background: #1e1e1e;
+    padding: 10px;
+    border-radius: 5px;
+    overflow-x: auto;
+    color: #b0bec5;
+}
+
+.btn {
+    display: inline-block;
+    background: #4fc3f7;
+    color: #121212;
+    padding: 10px 20px;
+    margin: 10px 0;
+    border-radius: 5px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #0288d1;
+}
+
+.lang-switcher {
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+.lang-switcher button {
+    background:#4fc3f7;
+    color:#121212;
+    border:none;
+    padding:6px 12px;
+    margin-left:5px;
+    border-radius:5px;
+    cursor:pointer;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.lang-switcher button:hover { background:#0288d1; }
+
+footer {
+    text-align:center;
+    margin:50px 0 20px 0;
+    color:#777;
+    font-size:0.9em;
+}
+
+/* === RESPONSIVE === */
+@media(max-width:800px){
+    .sidebar{
+        position: relative;
+        width: 100%;
+        height: auto;
+    }
+    .content{
+        margin-left: 0;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="sidebar">
+    <h2 id="sidebar-title">Documentation</h2>
+    <ul>
+        <li><a href="getting-started" id="nav-getting">Getting Started</a></li>
+        <li><a href="learn" id="nav-install">Learn</a></li>
+        <li><a href="game-engine-development" id="nav-download">Game engine development</a></li>
+        <li><a href="c-development" id="nav-build">C development</a></li>
+    </ul>
+    <div class="lang-switcher">
+        <button onclick="setLang('en')">EN</button>
+        <button onclick="setLang('fr')">FR</button>
+    </div>
+</div>
+
+<div class="content">
+    <h1 id="title">Documentation — Casio Graph 35+E II Game Engine</h1>
+    <h2>This page is under construction. Please check back later.</h2>
+
+    <footer>&copy; 2025 Casio Graph Game Engine | Made with ❤️ by ROCKNITE</footer>
+</div>
+
+<script>
+const content = {
+    en: {
+        sidebarTitle: "Documentation",
+        title: "Documentation — Casio Graph 35+E II Game Engine",
+        gettingStarted: "Getting Started",
+        gettingContent: document.getElementById('getting-started-content').innerHTML
+    },
+    fr: {
+        sidebarTitle: "Documentation",
+        title: "Documentation — Casio Graph 35+E II Game Engine",
+        gettingStarted: "Pour Commencer",
+        gettingContent: `
+<p>Pour commencer à développer avec le Casio Graph 35+E II Game Engine, suivez ces étapes :</p>
+<ol>
+    <li>Disposer d'un PC sous Linux ou Windows avec WSL.</li>
+    <li>Installer <strong>GiteaPC</strong> (Ubuntu/Debian/WSL) :
+<pre>sudo apt install curl git python3 build-essential pkg-config
+curl "https://git.planet-casio.com/Lephenixnoir/GiteaPC/raw/branch/master/install.sh" -o /tmp/giteapc-install.sh &amp;&amp; bash /tmp/giteapc-install.sh</pre></li>
+    <li>Installer <strong>Gint</strong> (Ubuntu/Debian/WSL) :
+<pre># Pour WSL :
+sudo apt install patch wget cmake python3-pil libusb-1.0-0-dev libsdl2-dev libpng-dev libncurses-dev
+
+# Pour Debian/Ubuntu :
+sudo apt install patch wget cmake python3-pil libusb-1.0-0-dev libudisks2-dev libglib2.0-dev libpng-dev
+
+giteapc install Lephenixnoir/gint</pre></li>
+    <li>Pour Arch Linux ou en cas de problème, voir :
+        <ul>
+            <li><a href="https://git.planet-casio.com/Lephenixnoir/GiteaPC">Répertoire GiteaPC</a></li>
+            <li><a href="https://git.planet-casio.com/Lephenixnoir/gint">Répertoire Gint</a></li>
+        </ul>
+    </li>
+    <li id="download">Téléchargez la version non compilée du projet :
+        <ul>
+            <li><a href="https://github.com/Satanas1275/CasioFx-3D-game-engine/releases/download/v1.0.0-beta/uncompiled-Fx3DGameEngine.zip" class="btn">Télécharger ZIP</a></li>
+        </ul>
+    </li>
+    <li>Modifier et tester le code selon vos besoins.</li>
+    <li id="build">Pour compiler le projet, exécuter à la racine (là où se trouve le CMakeLists.txt) :
+        <pre>fxsdk build-fx</pre>
+    </li>
+</ol>`
+    }
+}
+
+function setLang(lang){
+    const c = content[lang];
+    document.getElementById('sidebar-title').innerHTML = c.sidebarTitle;
+    document.getElementById('title').innerHTML = c.title;
+    document.getElementById('getting-started').innerHTML = c.gettingStarted;
+    document.getElementById('getting-started-content').innerHTML = c.gettingContent;
+}
+
+// Default language
+setLang('en');
+</script>
+
+</body>
+</html>

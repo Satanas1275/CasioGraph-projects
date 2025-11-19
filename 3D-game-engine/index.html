@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Casio Graph 35+E II Game Engine</title>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+    /* === GLOBAL STYLES === */
+    body {
+        font-family: 'Inter', sans-serif;
+        margin: 0;
+        padding: 0;
+        background: #f5f5f5;
+        color: #333;
+        line-height: 1.6;
+    }
+
+    a {
+        color: #007bff;
+        text-decoration: none;
+        transition: 0.3s;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 30px 20px;
+    }
+
+    h1 {
+        font-size: 2.8em;
+        text-align: center;
+        margin-bottom: 0.5em;
+        color: #222;
+    }
+
+    h2 {
+        font-size: 2em;
+        margin-top: 2em;
+        margin-bottom: 1em;
+        color: #222;
+        border-bottom: 2px solid #007bff;
+        padding-bottom: 5px;
+    }
+
+    p {
+        font-size: 1.1em;
+        margin-bottom: 1em;
+    }
+
+    /* === LANGUAGE SWITCHER === */
+    .lang-switcher {
+        text-align: right;
+        margin-bottom: 20px;
+    }
+
+    .lang-switcher button {
+        background: #007bff;
+        color: #fff;
+        border: none;
+        padding: 8px 14px;
+        margin-left: 5px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: 600;
+        transition: 0.3s;
+    }
+
+    .lang-switcher button:hover {
+        background: #0056b3;
+    }
+
+    /* === FEATURE CARDS === */
+    .features {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+    }
+
+    .card {
+        background: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        transition: 0.3s;
+    }
+
+    .card:hover {
+        box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+        transform: translateY(-3px);
+    }
+
+    /* === LISTS === */
+    ul, ol {
+        padding-left: 20px;
+    }
+
+    /* === BUTTONS === */
+    .btn {
+        display: inline-block;
+        background: #007bff;
+        color: #fff;
+        padding: 10px 20px;
+        margin: 15px 0;
+        border-radius: 5px;
+        font-weight: 600;
+        transition: 0.3s;
+        text-decoration: none;
+    }
+
+    .btn:hover {
+        background: #0056b3;
+    }
+
+    /* === FOOTER === */
+    footer {
+        text-align: center;
+        margin: 50px 0 20px 0;
+        color: #777;
+        font-size: 0.9em;
+    }
+
+    @media(max-width:600px) {
+        h1 { font-size: 2em; }
+        h2 { font-size: 1.5em; }
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="lang-switcher">
+        <button onclick="setLang('en')">EN</button>
+        <button onclick="setLang('fr')">FR</button>
+    </div>
+
+    <h1 id="title">Casio Graph 35+E II Game Engine</h1>
+    <p id="description">This is a professional game engine for the Casio Graph 35+E II calculator.</p>
+
+    <h2 id="features-title">Features</h2>
+    <div class="features" id="features-list">
+        <div class="card">3D Graphics Rendering</div>
+        <div class="card">Player Movement</div>
+        <div class="card">Physics Simulation</div>
+        <div class="card">Game Loop Management</div>
+    </div>
+
+    <h2 id="future-features-title">Future Features</h2>
+    <div class="features" id="future-features-list">
+        <div class="card">Collision Detection</div>
+        <div class="card">Monochrome Texture Implementation</div>
+        <div class="card">UI Implementation</div>
+        <div class="card">Object State Management</div>
+        <div class="card">World Object Physics</div>
+        <div class="card">Save Functionality</div>
+        <div class="card">Activation Code</div>
+    </div>
+
+    <h2 id="getting-started-title">Getting Started</h2>
+    <ol id="getting-started-list">
+        <li>Download the game engine files from the <a href="https://github.com/Satanas1275/CasioFx-3D-game-engine/tree/main" class="btn">GitHub Repository</a>.</li>
+        <li>Install the necessary software on your Casio Graph 35+E II calculator. You can find them <a href="/3D-game-engine/documentation/software/">here</a>.</li>
+        <li>Follow the <a href="/3D-game-engine/documentation/">documentation</a> to create your first game.</li>
+    </ol>
+
+    <footer>
+        &copy; 2025 Casio Graph Game Engine | Made with ❤️ by Satanas1275
+    </footer>
+</div>
+
+<script>
+const content = {
+    en: {
+        title: "Casio Graph 35+E II Game Engine",
+        description: "This is a professional game engine for the Casio Graph 35+E II calculator.",
+        featuresTitle: "Features",
+        features: [
+            "3D Graphics Rendering",
+            "Player Movement",
+            "Physics Simulation",
+            "Game Loop Management"
+        ],
+        futureTitle: "Future Features",
+        future: [
+            "Collision Detection",
+            "Monochrome Texture Implementation",
+            "UI Implementation",
+            "Object State Management",
+            "World Object Physics",
+            "Save Functionality",
+            "Activation Code"
+        ],
+        gettingTitle: "Getting Started",
+        getting: [
+            'Download the game engine files from the <a href="https://github.com/Satanas1275/CasioFx-3D-game-engine/tree/main" class="btn">GitHub Repository</a>.',
+            'Install the necessary software on your Casio Graph 35+E II calculator. You can find them <a href="/3D-game-engine/documentation/software/">here</a>.',
+            'Follow the <a href="/3D-game-engine/documentation/">documentation</a> to create your first game.'
+        ]
+    },
+    fr: {
+        title: "Moteur de Jeu Casio Graph 35+E II",
+        description: "Ceci est un moteur de jeu professionnel pour la calculatrice Casio Graph 35+E II.",
+        featuresTitle: "Fonctionnalités",
+        features: [
+            "Rendu 3D",
+            "Déplacement du Joueur",
+            "Simulation Physique",
+            "Gestion de la Boucle du Jeu"
+        ],
+        futureTitle: "Fonctionnalités Futures",
+        future: [
+            "Détection de Collision",
+            "Implémentation de Textures Monochromes",
+            "Implémentation de l'UI",
+            "Gestion de l'État des Objets",
+            "Physique des Objets du Monde",
+            "Fonctionnalité de Sauvegarde",
+            "Code d'Activation"
+        ],
+        gettingTitle: "Pour Commencer",
+        getting: [
+            'Téléchargez les fichiers du moteur depuis le <a href="https://github.com/Satanas1275/CasioFx-3D-game-engine/tree/main" class="btn">répertoire GitHub</a>.',
+            'Installez le logiciel nécessaire sur votre calculatrice Casio Graph 35+E II. Vous pouvez les trouver <a href="/3D-game-engine/documentation/software/">ici</a>.',
+            'Suivez la <a href="/3D-game-engine/documentation/">documentation</a> pour créer votre premier jeu.'
+        ]
+    }
+}
+
+function setLang(lang) {
+    const c = content[lang];
+    document.getElementById('title').innerHTML = c.title;
+    document.getElementById('description').innerHTML = c.description;
+
+    document.getElementById('features-title').innerHTML = c.featuresTitle;
+    const featuresList = document.getElementById('features-list');
+    featuresList.innerHTML = '';
+    c.features.forEach(f => {
+        const div = document.createElement('div');
+        div.className = 'card';
+        div.innerHTML = f;
+        featuresList.appendChild(div);
+    });
+
+    document.getElementById('future-features-title').innerHTML = c.futureTitle;
+    const futureList = document.getElementById('future-features-list');
+    futureList.innerHTML = '';
+    c.future.forEach(f => {
+        const div = document.createElement('div');
+        div.className = 'card';
+        div.innerHTML = f;
+        futureList.appendChild(div);
+    });
+
+    document.getElementById('getting-started-title').innerHTML = c.gettingTitle;
+    const gettingList = document.getElementById('getting-started-list');
+    gettingList.innerHTML = '';
+    c.getting.forEach(item => {
+        const li = document.createElement('li');
+        li.innerHTML = item;
+        gettingList.appendChild(li);
+    });
+}
+
+// Default language
+setLang('en');
+</script>
+</body>
+</html>
