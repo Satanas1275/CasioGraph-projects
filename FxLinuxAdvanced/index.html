@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FxLinux Advanced - Casio Graph 35+E II</title>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+    /* === GLOBAL STYLES === */
+    body {
+        font-family: 'Inter', sans-serif;
+        margin: 0;
+        padding: 0;
+        background: #f5f5f5;
+        color: #333;
+        line-height: 1.6;
+    }
+
+    a {
+        color: #007bff;
+        text-decoration: none;
+        transition: 0.3s;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 30px 20px;
+    }
+
+    h1 {
+        font-size: 2.8em;
+        text-align: center;
+        margin-bottom: 0.5em;
+        color: #222;
+    }
+
+    h2 {
+        font-size: 2em;
+        margin-top: 2em;
+        margin-bottom: 1em;
+        color: #222;
+        border-bottom: 2px solid #007bff;
+        padding-bottom: 5px;
+    }
+
+    p {
+        font-size: 1.1em;
+        margin-bottom: 1em;
+    }
+
+    /* === LANGUAGE SWITCHER === */
+    .lang-switcher {
+        text-align: right;
+        margin-bottom: 20px;
+    }
+
+    .lang-switcher button {
+        background: #007bff;
+        color: #fff;
+        border: none;
+        padding: 8px 14px;
+        margin-left: 5px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: 600;
+        transition: 0.3s;
+    }
+
+    .lang-switcher button:hover {
+        background: #0056b3;
+    }
+
+    .lang-switcher button.active {
+        background: #0056b3;
+        border: 2px solid #fff;
+    }
+
+    /* === FEATURE CARDS === */
+    .features {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+    }
+
+    .card {
+        background: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        transition: 0.3s;
+    }
+
+    .card:hover {
+        box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+        transform: translateY(-3px);
+    }
+
+    /* === LISTS === */
+    ul, ol {
+        padding-left: 20px;
+    }
+
+    /* === BUTTONS === */
+    .btn {
+        display: inline-block;
+        background: #007bff;
+        color: #fff;
+        padding: 10px 20px;
+        margin: 15px 0;
+        border-radius: 5px;
+        font-weight: 600;
+        transition: 0.3s;
+        text-decoration: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    .btn:hover {
+        background: #0056b3;
+        text-decoration: none;
+    }
+
+    .btn-primary {
+        background: #28a745;
+        font-size: 1.1em;
+        padding: 12px 25px;
+    }
+
+    .btn-primary:hover {
+        background: #218838;
+    }
+
+    /* === FOOTER === */
+    footer {
+        text-align: center;
+        margin: 50px 0 20px 0;
+        color: #777;
+        font-size: 0.9em;
+    }
+
+    @media(max-width:600px) {
+        h1 { font-size: 2em; }
+        h2 { font-size: 1.5em; }
+        .lang-switcher { text-align: center; margin-bottom: 30px; }
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="lang-switcher">
+        <button onclick="setLang('en')" id="btn-en" class="active">EN</button>
+        <button onclick="setLang('fr')" id="btn-fr">FR</button>
+    </div>
+
+    <h1 id="title">FxLinux Advanced</h1>
+    <p id="description">This is a professional advanced linux distribution for the Casio Graph 35+E II calculator.</p>
+
+    <h2 id="features-title">Features</h2>
+    <div class="features" id="features-list"></div>
+
+    <h2 id="future-features-title">Future Features</h2>
+    <div class="features" id="future-features-list"></div>
+
+    <h2 id="download-title">Download</h2>
+    <a href="https://github.com/Satanas1275/FxLinuxAdvanced/releases/download/v1.0.0-beta/FxLinuxAdvanced.g1a" class="btn btn-primary" id="download-btn">Download FxLinux Advanced</a>
+
+    <h2 id="getting-started-title">Getting Started</h2>
+    <ol id="getting-started-list"></ol>
+
+    <footer id="footer">
+        &copy; 2025 Satanas1275 | Made with ❤️
+    </footer>
+</div>
+
+<script>
+const content = {
+    en: {
+        title: "FxLinux Advanced",
+        description: "This is a professional advanced Linux distribution for the Casio Graph 35+E II calculator.",
+        featuresTitle: "Features",
+        features: [
+            "Basic Linux commands",
+            "Basic desktop environment",
+            "Advanced command support"
+        ],
+        futureTitle: "Future Features",
+        future: [
+            "Better desktop environment",
+            "More commands",
+            "Package manager",
+            "Network support (PC or ESP32)",
+            "Command history"
+        ],
+        downloadTitle: "Download",
+        downloadBtn: "Download FxLinux Advanced",
+        gettingTitle: "Getting Started",
+        getting: [
+            'Download FxLinuxAdvanced from the <a href="https://github.com/Satanas1275/FxLinuxAdvanced/" target="_blank">GitHub Repository</a>.',
+            'Install the necessary software on your Casio Graph 35+E II calculator.',
+            'Follow the documentation to get started.'
+        ]
+    },
+    fr: {
+        title: "FxLinux Advanced",
+        description: "Ceci est une distribution Linux avancée et professionnelle pour la calculatrice Casio Graph 35+E II.",
+        featuresTitle: "Fonctionnalités",
+        features: [
+            "Commandes Linux basiques",
+            "Environnement de bureau basique",
+            "Support des commandes avancées"
+        ],
+        futureTitle: "Fonctionnalités Futures",
+        future: [
+            "Meilleur environnement de bureau",
+            "Plus de commandes",
+            "Gestionnaire de paquets",
+            "Support réseau (PC ou ESP32)",
+            "Historique des commandes"
+        ],
+        downloadTitle: "Télécharger",
+        downloadBtn: "Télécharger FxLinux Advanced",
+        gettingTitle: "Pour Commencer",
+        getting: [
+            'Téléchargez FxLinuxAdvanced depuis le <a href="https://github.com/Satanas1275/FxLinuxAdvanced/" target="_blank">répertoire GitHub</a>.',
+            'Installez les logiciels nécessaires sur votre calculatrice Casio Graph 35+E II.',
+            'Suivez la documentation pour commencer.'
+        ]
+    }
+}
+
+function setLang(lang) {
+    const c = content[lang];
+    
+    // Update buttons state
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    document.getElementById('btn-fr').classList.toggle('active', lang === 'fr');
+    
+    document.getElementById('title').innerHTML = c.title;
+    document.getElementById('description').innerHTML = c.description;
+
+    document.getElementById('features-title').innerHTML = c.featuresTitle;
+    const featuresList = document.getElementById('features-list');
+    featuresList.innerHTML = '';
+    c.features.forEach(f => {
+        const div = document.createElement('div');
+        div.className = 'card';
+        div.innerHTML = f;
+        featuresList.appendChild(div);
+    });
+
+    document.getElementById('future-features-title').innerHTML = c.futureTitle;
+    const futureList = document.getElementById('future-features-list');
+    futureList.innerHTML = '';
+    c.future.forEach(f => {
+        const div = document.createElement('div');
+        div.className = 'card';
+        div.innerHTML = f;
+        futureList.appendChild(div);
+    });
+
+    document.getElementById('download-title').innerHTML = c.downloadTitle;
+    document.getElementById('download-btn').innerHTML = c.downloadBtn;
+
+    document.getElementById('getting-started-title').innerHTML = c.gettingTitle;
+    const gettingList = document.getElementById('getting-started-list');
+    gettingList.innerHTML = '';
+    c.getting.forEach(item => {
+        const li = document.createElement('li');
+        li.innerHTML = item;
+        gettingList.appendChild(li);
+    });
+}
+
+// Default language
+setLang('en');
+</script>
+</body>
+</html>
