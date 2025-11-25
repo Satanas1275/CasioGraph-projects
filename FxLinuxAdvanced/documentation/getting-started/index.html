@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Documentation — Casio Graph Game Engine</title>
+<title>Getting Started — FxLinux Advanced</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
@@ -116,35 +116,44 @@ pre {
 }
 
 .lang-switcher button {
-    background:#4fc3f7;
-    color:#121212;
-    border:none;
-    padding:6px 12px;
-    margin-left:5px;
-    border-radius:5px;
-    cursor:pointer;
-    font-weight:600;
-    transition:0.3s;
+    background: #4fc3f7;
+    color: #121212;
+    border: none;
+    padding: 6px 12px;
+    margin-left: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
 }
 
-.lang-switcher button:hover { background:#0288d1; }
+.lang-switcher button:hover {
+    background: #0288d1;
+}
+
+.lang-switcher button.active {
+    background: #0288d1;
+    border: 2px solid #fff;
+}
 
 footer {
-    text-align:center;
-    margin:50px 0 20px 0;
-    color:#777;
-    font-size:0.9em;
+    text-align: center;
+    margin: 50px 0 20px 0;
+    color: #777;
+    font-size: 0.9em;
 }
 
 /* === RESPONSIVE === */
-@media(max-width:800px){
-    .sidebar{
+@media(max-width:800px) {
+    .sidebar {
         position: relative;
         width: 100%;
         height: auto;
+        margin-bottom: 20px;
     }
-    .content{
+    .content {
         margin-left: 0;
+        padding: 20px;
     }
 }
 </style>
@@ -154,110 +163,83 @@ footer {
 <div class="sidebar">
     <h2 id="sidebar-title">Documentation</h2>
     <ul>
-        <li><a href="../getting-started" id="nav-getting">Getting Started</a></li>
-        <li><a href="../learn" id="nav-install">Learn</a></li>
-        <li><a href="../game-engine-development" id="nav-download">Game engine development</a></li>
-        <li><a href="../c-development" id="nav-build">C development</a></li>
+        <li><a href="./" id="nav-getting">Getting Started</a></li>
     </ul>
     <div class="lang-switcher">
-        <button onclick="setLang('en')">EN</button>
-        <button onclick="setLang('fr')">FR</button>
+        <button onclick="setLang('en')" id="btn-en" class="active">EN</button>
+        <button onclick="setLang('fr')" id="btn-fr">FR</button>
     </div>
 </div>
 
 <div class="content">
-    <h1 id="title">Documentation — Casio Graph 35+E II Game Engine</h1>
+    <h1 id="title">Getting Started — FxLinux Advanced</h1>
 
-    <h2 id="getting-started">Getting Started</h2>
-    <div id="getting-started-content">
-        <p>To start developing with the Casio Graph 35+E II Game Engine, follow these steps:</p>
-        <ol>
-            <li>Have a PC running Linux or Windows with WSL.</li>
-            <li>Install <strong>GiteaPC</strong> (Ubuntu/Debian/WSL):
-<pre>sudo apt install curl git python3 build-essential pkg-config
-curl "https://git.planet-casio.com/Lephenixnoir/GiteaPC/raw/branch/master/install.sh" -o /tmp/giteapc-install.sh &amp;&amp; bash /tmp/giteapc-install.sh</pre>
-            </li>
-            <li>Install <strong>Gint</strong> (Ubuntu/Debian/WSL):
-<pre># For WSL users:
-sudo apt install patch wget cmake python3-pil libusb-1.0-0-dev libsdl2-dev libpng-dev libncurses-dev
+    <h2 id="getting-started-heading">Getting Started</h2>
+    <div id="getting-started-content"></div>
 
-# For Debian/Ubuntu:
-sudo apt install patch wget cmake python3-pil libusb-1.0-0-dev libudisks2-dev libglib2.0-dev libpng-dev
-
-giteapc install Lephenixnoir/gint</pre>
-            </li>
-            <li>If you are using Arch Linux or encounter problems, see:
-                <ul>
-                    <li><a href="https://git.planet-casio.com/Lephenixnoir/GiteaPC">GiteaPC repository</a></li>
-                    <li><a href="https://git.planet-casio.com/Lephenixnoir/gint">Gint repository</a></li>
-                </ul>
-            </li>
-            <li id="download">Download the uncompiled version of the project:
-                <ul>
-                    <li><a href="https://github.com/Satanas1275/CasioFx-3D-game-engine/releases/download/v1.0.0-beta/uncompiled-Fx3DGameEngine.zip" class="btn">Download ZIP</a></li>
-                </ul>
-            </li>
-            <li>Edit and test the code as needed.</li>
-            <li id="build">To build the project, execute at the root (where CMakeLists.txt is):
-                <pre>fxsdk build-fx</pre>
-            </li>
-        </ol>
-    </div>
-
-    <footer>&copy; 2025 Satanas1275 | Made with ❤️ by Satanas1275️</footer>
+    <footer id="footer">&copy; 2025 Satanas1275 | Made with ❤️</footer>
 </div>
 
 <script>
 const content = {
     en: {
         sidebarTitle: "Documentation",
-        title: "Documentation — Casio Graph 35+E II Game Engine",
+        title: "Getting Started — FxLinux Advanced",
         gettingStarted: "Getting Started",
-        gettingContent: document.getElementById('getting-started-content').innerHTML
+        gettingContent: `
+<p>To start developing applications for FxLinux Advanced, follow these steps:</p>
+<ol>
+    <li>Download the development template here:
+        <ul>
+            <li><a href="https://satanas1275.github.io/CasioGraph-projects/FxLinuxAdvanced/repo/template.zip" class="btn">Download Template</a></li>
+        </ul>
+    </li>
+    <li>Extract the template to your desired location.</li>
+    <li>Develop your <strong>.fla</strong> application using the template structure.</li>
+    <li>Test your application using the FxLinux Advanced interpreter.</li>
+    <li>Submit your application to the official repository:
+        <ul>
+            <li><a href="https://satanas1275.github.io/CasioGraph-projects/FxLinuxAdvanced/repo/" target="_blank">FxLinux Advanced Repository</a></li>
+        </ul>
+    </li>
+    <li>Follow the repository guidelines for submission and contribution.</li>
+</ol>`
     },
     fr: {
         sidebarTitle: "Documentation",
-        title: "Documentation — Casio Graph 35+E II Game Engine",
+        title: "Pour Commencer — FxLinux Advanced",
         gettingStarted: "Pour Commencer",
         gettingContent: `
-<p>Pour commencer à développer avec le Casio Graph 35+E II Game Engine, suivez ces étapes :</p>
+<p>Pour commencer à développer des applications pour FxLinux Advanced, suivez ces étapes :</p>
 <ol>
-    <li>Disposer d'un PC sous Linux ou Windows avec WSL.</li>
-    <li>Installer <strong>GiteaPC</strong> (Ubuntu/Debian/WSL) :
-<pre>sudo apt install curl git python3 build-essential pkg-config
-curl "https://git.planet-casio.com/Lephenixnoir/GiteaPC/raw/branch/master/install.sh" -o /tmp/giteapc-install.sh &amp;&amp; bash /tmp/giteapc-install.sh</pre></li>
-    <li>Installer <strong>Gint</strong> (Ubuntu/Debian/WSL) :
-<pre># Pour WSL :
-sudo apt install patch wget cmake python3-pil libusb-1.0-0-dev libsdl2-dev libpng-dev libncurses-dev
-
-# Pour Debian/Ubuntu :
-sudo apt install patch wget cmake python3-pil libusb-1.0-0-dev libudisks2-dev libglib2.0-dev libpng-dev
-
-giteapc install Lephenixnoir/gint</pre></li>
-    <li>Pour Arch Linux ou en cas de problème, voir :
+    <li>Téléchargez le template de développement ici :
         <ul>
-            <li><a href="https://git.planet-casio.com/Lephenixnoir/GiteaPC">Répertoire GiteaPC</a></li>
-            <li><a href="https://git.planet-casio.com/Lephenixnoir/gint">Répertoire Gint</a></li>
+            <li><a href="https://satanas1275.github.io/CasioGraph-projects/FxLinuxAdvanced/repo/template.zip" class="btn">Télécharger Template</a></li>
         </ul>
     </li>
-    <li id="download">Téléchargez la version non compilée du projet :
+    <li>Extrayez le template à l'endroit souhaité.</li>
+    <li>Développez votre application <strong>.fla</strong> en utilisant la structure du template.</li>
+    <li>Testez votre application avec l'interpréteur FxLinux Advanced.</li>
+    <li>Soumettez votre application au répertoire officiel :
         <ul>
-            <li><a href="https://github.com/Satanas1275/CasioFx-3D-game-engine/releases/download/v1.0.0-beta/uncompiled-Fx3DGameEngine.zip" class="btn">Télécharger ZIP</a></li>
+            <li><a href="https://satanas1275.github.io/CasioGraph-projects/FxLinuxAdvanced/repo/" target="_blank">Répertoire FxLinux Advanced</a></li>
         </ul>
     </li>
-    <li>Modifier et tester le code selon vos besoins.</li>
-    <li id="build">Pour compiler le projet, exécuter à la racine (là où se trouve le CMakeLists.txt) :
-        <pre>fxsdk build-fx</pre>
-    </li>
+    <li>Suivez les directives du répertoire pour la soumission et la contribution.</li>
 </ol>`
     }
 }
 
-function setLang(lang){
+function setLang(lang) {
     const c = content[lang];
+    
+    // Update buttons state
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    document.getElementById('btn-fr').classList.toggle('active', lang === 'fr');
+    
     document.getElementById('sidebar-title').innerHTML = c.sidebarTitle;
     document.getElementById('title').innerHTML = c.title;
-    document.getElementById('getting-started').innerHTML = c.gettingStarted;
+    document.getElementById('getting-started-heading').innerHTML = c.gettingStarted;
     document.getElementById('getting-started-content').innerHTML = c.gettingContent;
 }
 
@@ -267,4 +249,3 @@ setLang('en');
 
 </body>
 </html>
-
